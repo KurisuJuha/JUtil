@@ -8,6 +8,7 @@ public class Test : MonoBehaviour
     void Start()
     {
         BytesUtilTest();
+        ViewStringTest();
     }
 
     void Update()
@@ -23,5 +24,14 @@ public class Test : MonoBehaviour
         Debug.Log(string.Join(',', b));
         int c = b.ToInt();
         Debug.Log(c);
+    }
+
+    public void ViewStringTest()
+    {
+        int a = 10;
+        Debug.Log(a.View());
+
+        string b = "hogehogefoo";
+        Debug.Log(b.View().SetTypeName());
     }
 }

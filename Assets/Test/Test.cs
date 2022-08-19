@@ -33,5 +33,13 @@ public class Test : MonoBehaviour
 
         string b = "hogehogefoo";
         Debug.Log(b.View().SetTypeName());
+
+        float c = Mathf.PI;
+        Debug.Log(c.View().SetTypeName());
+
+        bool d = true;
+        Debug.Log(d
+            .View()
+            .SetTypeName());
     }
 }

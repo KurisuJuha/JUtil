@@ -20,5 +20,15 @@ namespace JuhaKurisu.JUtil
         {
             return new ViewString(value, typeof(string));
         }
+
+        public static ViewString View(this float value)
+        {
+            return new ViewString(value.ToString(), typeof(float));
+        }
+
+        public static ViewString View(this bool value)
+        {
+            return new ViewString(value.ToString(), typeof(bool));
+        }
     }
 }

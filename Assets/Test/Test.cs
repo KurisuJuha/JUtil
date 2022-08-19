@@ -55,5 +55,16 @@ public class Test : MonoBehaviour
         Debug.Log(e
             .View()
             .SetTypeName());
+
+        List<string> f = new List<string>()
+        {
+            "hoge",
+            "ho-ge",
+            "hogeho-ge",
+            "ho-gehoge",
+            "HoGeHoGe",
+        };
+
+        Debug.Log(f.View().SetTypeName());
     }
 }

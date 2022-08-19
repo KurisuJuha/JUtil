@@ -52,5 +52,26 @@ namespace JuhaKurisu.JUtil
 
             return new ViewString(builder.ToString(), typeof(T[]));
         }
+
+        public static ViewString View<T>(this List<T> value)
+        {
+            StringBuilder builder = new StringBuilder();
+
+            builder.Append(" [ ");
+
+            for (int i = 0; i < value.Count; i++)
+            {
+                builder.Append(value[i].View());
+
+                if (i != value.Count - 1)
+                {
+                    builder.Append(" , ");
+                }
+            }
+
+            builder.Append(" ] ");
+
+            return new ViewString(builder.ToString(), typeof(List<T>));
+        }
     }
 }

@@ -43,22 +43,22 @@ public class ViewString
 
     public static implicit operator string(ViewString viewString)
     {
-        StringBuilder builder = new StringBuilder();
+        List<string> strs = new List<string>();
 
         if (viewString.viewTypeName)
         {
-            builder.Append("typeName : ");
-            builder.Append(viewString.typeName);
-            builder.AppendLine();
+            string str = "typeName : ";
+            str += viewString.typeName;
+            strs.Add(str);
         }
 
         if (viewString.viewMain)
         {
-            builder.Append("data : ");
-            builder.Append(viewString.main);
-            builder.AppendLine();
+            string str = "data : ";
+            str += viewString.main;
+            strs.Add(str);
         }
 
-        return builder.ToString();
+        return string.Join('\n', strs);
     }
 }

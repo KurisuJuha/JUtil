@@ -41,5 +41,19 @@ public class Test : MonoBehaviour
         Debug.Log(d
             .View()
             .SetTypeName());
+
+        int[] e = new int[]
+        {
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+        };
+
+        Debug.Log(e
+            .View()
+            .SetTypeName());
     }
 }

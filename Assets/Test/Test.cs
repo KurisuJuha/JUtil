@@ -66,5 +66,14 @@ public class Test : MonoBehaviour
         };
 
         Debug.Log(f.View().SetTypeName());
+
+        List<int>[] g = new List<int>[]
+        {
+            new List<int>(),
+        };
+
+        Debug.Log(g
+            .View()
+            .SetTypeName());
     }
 }

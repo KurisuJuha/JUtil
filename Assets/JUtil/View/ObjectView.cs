@@ -7,25 +7,17 @@ namespace JuhaKurisu.JUtil
 {
     public static class ObjectView
     {
-        public static ViewString View(this object obj)
+        public static void test(int value)
         {
-            if (obj is int)
-            {
-                return ((int)obj).View();
-            }
-            if (obj is string)
-            {
-                return ((string)obj).View();
-            }
-            if (obj is float)
-            {
-                return ((float)obj).View();
-            }
-            if (obj is bool)
-            {
-                return ((bool)obj).View();
-            }
+            Debug.Log("int‚Å‚µ‚½");
+        }
+        public static void test(object value)
+        {
+            Debug.Log("object‚Å‚µ‚½");
+        }
 
+        public static ViewString View<T>(this T obj)
+        {
             return new ViewString(obj.ToString(), typeof(object));
         }
 
@@ -47,48 +39,6 @@ namespace JuhaKurisu.JUtil
         public static ViewString View(this bool value)
         {
             return new ViewString(value.ToString(), typeof(bool));
-        }
-
-        public static ViewString View<T>(this T[] value)
-        {
-            StringBuilder builder = new StringBuilder();
-
-            builder.Append(" [ ");
-            
-            for (int i = 0; i < value.Length; i++)
-            {
-                builder.Append(value[i].View());
-
-                if (i != value.Length - 1)
-                {
-                    builder.Append(" , ");
-                }
-            }
-
-            builder.Append(" ] ");
-
-            return new ViewString(builder.ToString(), typeof(T[]));
-        }
-
-        public static ViewString View<T>(this List<T> value)
-        {
-            StringBuilder builder = new StringBuilder();
-
-            builder.Append(" [ ");
-
-            for (int i = 0; i < value.Count; i++)
-            {
-                builder.Append(value[i].View());
-
-                if (i != value.Count - 1)
-                {
-                    builder.Append(" , ");
-                }
-            }
-
-            builder.Append(" ] ");
-
-            return new ViewString(builder.ToString(), typeof(List<T>));
         }
     }
 }

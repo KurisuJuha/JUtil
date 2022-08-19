@@ -9,6 +9,23 @@ namespace JuhaKurisu.JUtil
     {
         public static ViewString View(this object obj)
         {
+            if (obj is int)
+            {
+                return ((int)obj).View();
+            }
+            if (obj is string)
+            {
+                return ((string)obj).View();
+            }
+            if (obj is float)
+            {
+                return ((float)obj).View();
+            }
+            if (obj is bool)
+            {
+                return ((bool)obj).View();
+            }
+
             return new ViewString(obj.ToString(), typeof(object));
         }
 
@@ -19,12 +36,12 @@ namespace JuhaKurisu.JUtil
 
         public static ViewString View(this string value)
         {
-            return new ViewString(value, typeof(string));
+            return new ViewString("\"" + value + "\"", typeof(string));
         }
 
         public static ViewString View(this float value)
         {
-            return new ViewString(value.ToString(), typeof(float));
+            return new ViewString(value.ToString() + "f", typeof(float));
         }
 
         public static ViewString View(this bool value)

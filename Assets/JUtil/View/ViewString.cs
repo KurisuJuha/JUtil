@@ -17,7 +17,6 @@ public class ViewString
     public ViewString(string main, Type type)
     {
         SetMain();
-
         this.main = main;
         this.typeName = type.Name;
     }

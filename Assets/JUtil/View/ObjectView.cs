@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,18 +8,9 @@ namespace JuhaKurisu.JUtil
 {
     public static class ObjectView
     {
-        public static void test(int value)
+        public static string View<T>(this T obj)
         {
-            Debug.Log("int‚Å‚µ‚½");
-        }
-        public static void test(object value)
-        {
-            Debug.Log("object‚Å‚µ‚½");
-        }
-
-        public static ViewString View<T>(this T obj)
-        {
-            return new ViewString(obj.ToString(), typeof(object));
+            return JsonUtility.ToJson(obj);
         }
 
         public static ViewString View(this int value)

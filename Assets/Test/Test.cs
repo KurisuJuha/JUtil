@@ -32,15 +32,14 @@ public class Test : MonoBehaviour
         Debug.Log(a.View());
 
         string b = "hogehogefoo";
-        Debug.Log(b.View().SetTypeName());
+        Debug.Log(b.View());
 
         float c = Mathf.PI;
-        Debug.Log(c.View().SetTypeName());
+        Debug.Log(c.View());
 
         bool d = true;
         Debug.Log(d
-            .View()
-            .SetTypeName());
+            .View());
 
         int[] e = new int[]
         {
@@ -53,10 +52,9 @@ public class Test : MonoBehaviour
         };
 
         Debug.Log(e
-            .View()
-            .SetTypeName());
+            .View());
 
-        List<string> f = new List<string>()
+        string[] f = new string[]
         {
             "hoge",
             "ho-ge",
@@ -65,7 +63,7 @@ public class Test : MonoBehaviour
             "HoGeHoGe",
         };
 
-        Debug.Log(f.View().SetTypeName());
+        Debug.Log(f.View());
 
         List<int>[] g = new List<int>[]
         {
@@ -73,7 +71,18 @@ public class Test : MonoBehaviour
         };
 
         Debug.Log(g
-            .View()
-            .SetTypeName());
+            .View());
+
+        List<string> h = new List<string>()
+        {
+            "hoge",
+            "ho-ge",
+            "hogeho-ge",
+            "ho-gehoge",
+            "HoGeHoGe",
+        };
+
+        Debug.Log(h
+            .View());
     }
 }
